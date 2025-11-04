@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  backend:
+    build: .
+    container_name: autocaptionai-backend
+    restart: unless-stopped
+    environment:
+      - WHISPER_MODEL=small
+      - USE_CUDA=0
+    ports:
+      - "8000:8000"
